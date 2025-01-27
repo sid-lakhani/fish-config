@@ -1,4 +1,7 @@
-# ~/.bashrc - The Ultimate Personalized Bash Configuration for Siddhesh Lakhani
+# Enable bash completion if available
+if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+fi
 
 # Colors
 BLUE="\033[1;34m"
@@ -40,7 +43,7 @@ quotes=(
     "'Code is like humor. When you have to explain it, it’s bad.' - Cory House"
     "'Programs must be written for people to read, and only incidentally for machines to execute.' - Harold Abelson"
     "'Simplicity is the soul of efficiency.' - Austin Freeman"
-    "'In order to be irreplaceable, one must always be different.' - Coco Chanel (applies to unique code!)"
+    "'In order to be irreplaceable, one must always be different.' - Coco Chanel"
     "'There are only two hard things in computer science: cache invalidation, naming things, and off-by-one errors.' - Martin Fowler"
     "'The best error message is the one that never shows up.' - Thomas Fuchs"
     "'If you don’t program with love, you will miss the beauty in the work you do.' - Unknown"
@@ -48,16 +51,11 @@ quotes=(
 )
 random_quote=${quotes[$RANDOM % ${#quotes[@]}]}
 
-# Display the quote with a vibrant style
+# Display the quote
 echo -e "${YELLOW}Welcome to your coding space, ${NAME}!"
 echo -e "${CYAN}"  # Bright cyan text color
 echo -e "$random_quote"
 echo -e "${RESET}"  # Reset to default color
-
-# Enable bash completion if available
-if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-fi
 
 # Stylish and compact prompt with Git branch info
 parse_git_branch() {
@@ -78,6 +76,10 @@ alias update='sudo pacman -Syu'
 alias remove='sudo pacman -Rns'
 alias reboot='sudo systemctl reboot'
 alias shutdown='sudo systemctl poweroff'
+alias yay='yay --color=always'
+alias yay-update='yay -Syu --devel'
+alias yay-search='yay -Ss'
+alias yay-remove='yay -Rns'
 
 # Enhanced command line history settings
 export HISTSIZE=10000
@@ -146,6 +148,18 @@ complete -C /usr/bin/pacman pacman
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
+
+# Direct navigation function
+navigate() {
+    if [ -d "$1" ]; then
+        cd "$1"
+    else
+        echo "'$1' is not a directory."
+    fi
+}
+
+# Enable direct navigation for directory paths
+shopt -s autocd 2>/dev/null
 
 # Quick directory navigation
 alias ..='cd ..'
