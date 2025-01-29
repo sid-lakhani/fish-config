@@ -175,3 +175,5 @@ bind '"\C-r": reverse-search-history'
 
 # Custom system monitor shortcut using htop
 alias monitor='htop'
+
+source '/etc/grc.bashrc'
