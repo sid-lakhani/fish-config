@@ -10,11 +10,11 @@ set -gx NAME "sid"
 
 # Loading effect
 echo -e "Initializing your coding space..."
-sleep 0.6
+sleep 0.3
 echo -e "Loading modules..."
-sleep 0.6
+sleep 0.3
 echo -e "Almost ready...\n$RESET"
-sleep 0.6
+sleep 0.3
 
 # ASCII banner
 echo -e "$BLUE"
@@ -27,7 +27,7 @@ echo "
     ╚══════╝╚═╝╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝
 "
 echo -e "$RESET"
-sleep 0.2
+sleep 0.1
 
 # Define the array of quotes
 set quotes "'The only way to do great work is to love what you do.' - Steve Jobs" \
@@ -67,6 +67,28 @@ abbr -a shutdown "sudo systemctl poweroff"
 abbr -a yay-update "yay -Syu --devel"
 abbr -a yay-search "yay -Ss"
 abbr -a yay-remove "yay -Rns"
+abbr -a .. "cd .."
+abbr -a ... "cd ../.."
+abbr -a .... "cd ../../.."
+abbr -a home "cd ~"
+abbr -a dl "cd ~/Downloads"
+abbr -a dt "cd ~/Desktop"
+abbr -a docs "cd ~/Documents"
+abbr -a dev "cd ~/Projects"
+abbr -a repos "cd ~/bash-config"
+abbr -a pac-clean "sudo pacman -Rns (pacman -Qdtq)"
+abbr -a yay-orphans "yay -Rns (pacman -Qdtq)"
+abbr -a pac-refresh "sudo pacman -Syy"
+abbr -a pac-search "pacman -Ss"
+abbr -a pac-install "sudo pacman -S"
+abbr -a pac-remove "sudo pacman -Rns"
+abbr -a sysinfo "neofetch"
+abbr -a uptime "uptime -p"
+abbr -a cpu "lscpu"
+abbr -a gpu "glxinfo | grep OpenGL"
+abbr -a src "source ~/.config/fish/config.fish"
+abbr -a fishconfig "nano ~/.config/fish/config.fish"
+abbr -a fishhistory "history | less"
 
 # Set PATH
 set -gx PATH $PATH ~/.local/bin
@@ -129,11 +151,5 @@ function extract
     end
 end
 
-# Quick navigation shortcuts
-abbr -a .. "cd .."
-abbr -a ... "cd ../.."
-abbr -a .... "cd ../../.."
-
 # Better history handling
 set -U fish_history (math (random) % 10000)
-
