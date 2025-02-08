@@ -157,3 +157,5 @@ set -U fish_history (math (random) % 10000)
 
 # Add fnm to PATH
 set -gx PATH $HOME/.fnm:$PATH
+
+alias whatsapp="wasistlos"
