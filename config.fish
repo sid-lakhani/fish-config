@@ -159,3 +159,4 @@ set -U fish_history (math (random) % 10000)
 set -gx PATH $HOME/.fnm:$PATH
 
 alias whatsapp="wasistlos"
+alias of="onlyoffice-desktopeditors"
