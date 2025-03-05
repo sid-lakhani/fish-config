@@ -163,3 +163,4 @@ set -gx PATH $HOME/.fnm:$PATH
 
 alias whatsapp="wasistlos"
 alias of="onlyoffice-desktopeditors"
+alias btop="btop --utf-force"
