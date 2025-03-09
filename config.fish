@@ -1,3 +1,5 @@
+set -Ux MCFLY_HISTFILE "$HOME/.local/share/fish/fish_history"
+
 # Enable colors
 set -gx BLUE "\033[1;34m"
 set -gx GREEN "\033[1;32m"
