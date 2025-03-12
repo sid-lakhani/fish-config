@@ -95,6 +95,7 @@ abbr -a gpu "glxinfo | grep OpenGL"
 abbr -a src "source ~/.config/fish/config.fish"
 abbr -a fishconfig "nano ~/.config/fish/config.fish"
 abbr -a fishhistory "history | less"
+abbr -a auto "systemctl --user start daily-commit.service"
 
 # Set PATH
 set -gx PATH $PATH ~/.local/bin
