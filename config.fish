@@ -82,8 +82,6 @@ abbr -a docs "cd ~/Documents"
 abbr -a clg "cd /run/media/sidlakhani/external/clg/sem6"
 abbr -a work "cd /run/media/sidlakhani/external/work"
 abbr -a repos "cd /run/media/sidlakhani/external/repos"
-abbr -a pac-clean "sudo pacman -Rns (pacman -Qdtq)"
-abbr -a yay-orphans "yay -Rns (pacman -Qdtq)"
 abbr -a pac-refresh "sudo pacman -Syy"
 abbr -a pac-search "pacman -Ss"
 abbr -a pac-install "sudo pacman -S"
@@ -96,7 +94,27 @@ abbr -a src "source ~/.config/fish/config.fish"
 abbr -a fishconfig "nano ~/.config/fish/config.fish"
 abbr -a fishhistory "history | less"
 abbr -a auto "systemctl --user start daily-commit.service"
-abbr -a bye "exit"
+
+# Aliases for easy use 
+alias btop="btop --utf-force"
+alias bye="exit"
+
+function whatsapp
+    bg wasistlos $argv
+end
+
+function of
+    bg onlyoffice-desktopeditors $argv
+end
+
+function pac-clean
+    sudo pacman -Rns (pacman -Qdtq)
+end
+
+function yay-orphans
+    yay -Rns (pacman -Qdtq)
+end
+
 
 # Set PATH
 set -gx PATH $PATH ~/.local/bin
@@ -107,6 +125,11 @@ set -gx VISUAL vim
 
 # Set terminal color
 set -gx TERM xterm-256color
+
+# Run apps in background
+function bg
+    nohup $argv &>/dev/null &; disown
+end
 
 # Git prompt (Fish handles Git branch display differently)
 function fish_prompt
@@ -165,6 +188,3 @@ set -U fish_history (math (random) % 10000)
 # Add fnm to PATH
 set -gx PATH $HOME/.fnm:$PATH
 
-alias whatsapp="wasistlos"
-alias of="onlyoffice-desktopeditors"
-alias btop="btop --utf-force"
