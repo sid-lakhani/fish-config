@@ -100,6 +100,8 @@ abbr -a auto "systemctl --user start daily-commit.service"
 # Aliases for easy use 
 alias btop="btop --utf-force"
 alias bye="exit"
+alias update="yay -Syu"
+alias cleanup="sudo pacman -Rns $(pacman -Qdtq)"
 
 function whatsapp
     bg wasistlos $argv
