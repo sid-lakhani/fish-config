@@ -102,6 +102,7 @@ alias btop="btop --utf-force"
 alias bye="exit"
 alias update="garuda-update"
 alias cleanup="sudo pacman -Rns $(pacman -Qdtq)"
+alias tt="cat sched.txt"
 
 function whatsapp
     bg wasistlos $argv
