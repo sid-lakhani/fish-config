@@ -96,6 +96,7 @@ abbr -a src "source ~/.config/fish/config.fish"
 abbr -a fishconfig "nano ~/.config/fish/config.fish"
 abbr -a fishhistory "history | less"
 abbr -a auto "systemctl --user start daily-commit.service"
+abbr -a view "zathura"
 
 # Aliases for easy use 
 alias btop="btop --utf-force"
