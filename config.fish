@@ -104,6 +104,7 @@ alias bye="exit"
 alias update="garuda-update"
 alias cleanup="sudo pacman -Rns $(pacman -Qdtq)"
 alias tt="cat /run/media/sidlakhani/external/clg/sem6/sched.txt"
+alias dev="code . && npm run dev"
 
 function whatsapp
     bg wasistlos $argv
